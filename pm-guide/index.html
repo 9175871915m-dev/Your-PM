@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your PM — The Complete Field Guide to Project Management</title>
+  <meta name="description" content="A cinematic, scroll-driven field guide to modern project management — frameworks, lifecycle, risk, governance, and the future of AI in projects." />
+  <meta property="og:title" content="Your PM — The Complete Field Guide to Project Management" />
+  <meta property="og:description" content="Master Project Management through a cinematic, scroll-driven educational experience." />
+  <meta name="theme-color" content="#FAFAF8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Fixed top-right nav -->
+  <nav id="site-nav" aria-label="Site navigation">
+    <a id="chat-cta" href="http://localhost:3000" target="_blank" rel="noopener">
+      <span id="chat-cta-dot"></span>
+      Chat with Your PM
+      <svg id="chat-cta-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </nav>
+
+
+  <!-- ── HERO SCROLL SEQUENCE ──────────────────────────────────────── -->
+  <!--
+    700 vh total, sticky canvas.
+    192 frames → each frame ≈ 3.1 vh of scroll = slow-motion feel.
+    Background #E8E8E6 matches the frame background exactly.
+  -->
+  <section id="pm-hero" aria-label="Project management layer explosion">
+
+    <!-- Spinner loader -->
+    <div id="pm-loader" role="status" aria-live="polite">
+      <div class="pm-spinner"></div>
+      <span id="pm-loader-pct" class="pm-loader-pct">0%</span>
+    </div>
+
+    <!-- Sticky viewport -->
+    <div id="pm-sticky">
+      <canvas id="pm-canvas" aria-hidden="true"></canvas>
+
+      <!-- Overlay text -->
+      <div id="pm-overlay">
+        <div id="pm-text-block">
+          <p id="pm-eyebrow">The Complete Field Guide</p>
+          <h1 id="pm-title">Your <em>PM</em></h1>
+          <p id="pm-tagline">Every project layer — visualised, understood, delivered.</p>
+        </div>
+        <div id="pm-scroll-cue" aria-hidden="true">
+          <span class="pm-scroll-label">Scroll to explore</span>
+          <div class="pm-scroll-line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 01 — FOUNDATIONS ─────────────────────────────── -->
+  <section id="s01-foundations" class="content-section reveal-section">
+    <div class="container">
+      <p class="chapter-label reveal-item">01 / Foundations</p>
+      <h2 class="section-heading reveal-item">What is a Project?</h2>
+      <div class="section-body reveal-item">
+        <p>A project is a <strong>temporary endeavour</strong> undertaken to create a unique product, service, or result. It operates under the Iron Triangle — Scope, Time, and Cost — where changing one constraint forces a trade-off in the others.</p>
+      </div>
+
+      <!-- Key Terms Cards -->
+      <div class="term-cards reveal-item">
+        <div class="term-card"><span class="term-word">Project</span><p>Temporary endeavour to create a unique product, service, or result.</p></div>
+        <div class="term-card"><span class="term-word">Program</span><p>Related projects managed together to obtain benefits not available individually.</p></div>
+        <div class="term-card"><span class="term-word">Portfolio</span><p>Projects and programs managed as a group to achieve strategic objectives.</p></div>
+        <div class="term-card"><span class="term-word">Outcome</span><p>The end result; the broader intent of benefits and value delivered.</p></div>
+        <div class="term-card"><span class="term-word">Value</span><p>Worth or usefulness as perceived by customers, organizations, and society.</p></div>
+        <div class="term-card"><span class="term-word">Product</span><p>An artifact that is produced, quantifiable, and either an end item or component.</p></div>
+      </div>
+
+      <!-- Iron Triangle SVG -->
+      <div id="iron-triangle-wrap" class="reveal-item" aria-label="The Iron Triangle: Scope, Time, Cost">
+        <svg id="iron-triangle" viewBox="0 0 400 360" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <polygon points="200,30 30,340 370,340" stroke="#111111" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+          <line x1="200" y1="30" x2="200" y2="340" stroke="#111111" stroke-width="0.75" stroke-dasharray="4 6" opacity="0.35"/>
+          <line x1="30" y1="340" x2="285" y2="185" stroke="#111111" stroke-width="0.75" stroke-dasharray="4 6" opacity="0.35"/>
+          <line x1="370" y1="340" x2="115" y2="185" stroke="#111111" stroke-width="0.75" stroke-dasharray="4 6" opacity="0.35"/>
+          <circle cx="200" cy="185" r="4" fill="#2A7A8C"/>
+          <text x="200" y="16" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" letter-spacing="0.15em" fill="#111111">SCOPE</text>
+          <text x="14" y="358" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" letter-spacing="0.15em" fill="#111111">TIME</text>
+          <text x="388" y="358" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" letter-spacing="0.15em" fill="#111111">COST</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── METHODOLOGY VIDEO ──────────────────────────────────── -->
+  <section id="methodology-video" class="content-section reveal-section" style="background:#0F0F0F; color:white; text-align:center;">
+    <div class="container">
+      <p class="chapter-label reveal-item" style="color:var(--accent-light);">Visualising</p>
+      <h2 class="section-heading reveal-item" style="color:white; margin-bottom: 40px;">Methodology Architecture</h2>
+      <div class="video-container reveal-item" style="max-width:900px; margin:0 auto; border-radius:12px; overflow:hidden; box-shadow:0 10px 40px rgba(0,0,0,0.4);">
+        <video width="100%" controls preload="metadata" style="display:block;">
+          <source src="public/methodology.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 02 — 12 PRINCIPLES ──────────────────────────── -->
+  <section id="s02-principles" class="content-section content-section--dark reveal-section">
+    <div class="container">
+      <p class="chapter-label reveal-item">02 / PMBOK 7th Edition</p>
+      <h2 class="section-heading reveal-item">The 12 Principles of Project Management</h2>
+      <p class="section-intro reveal-item">These principles guide professional behaviour and are aligned with the global values of responsibility, respect, fairness, and honesty.</p>
+
+      <div class="principles-grid reveal-item">
+        <div class="principle-card" data-num="01" style="--clr:#2A7A8C">
+          <span class="pc-num">01</span>
+          <h3 class="pc-title">Stewardship</h3>
+          <p class="pc-body">Act responsibly with integrity, care, and trustworthiness — overseeing finances, resources, and the environment.</p>
+        </div>
+        <div class="principle-card" data-num="02" style="--clr:#3A6B8C">
+          <span class="pc-num">02</span>
+          <h3 class="pc-title">Team</h3>
+          <p class="pc-body">Build collaborative environments with clear roles, behavioral norms, and shared ownership of outcomes.</p>
+        </div>
+        <div class="principle-card" data-num="03" style="--clr:#5A6B9C">
+          <span class="pc-num">03</span>
+          <h3 class="pc-title">Stakeholders</h3>
+          <p class="pc-body">Engage proactively — analyse, communicate, and collaborate with all parties who can affect or are affected by the project.</p>
+        </div>
+        <div class="principle-card" data-num="04" style="--clr:#2A7A6C">
+          <span class="pc-num">04</span>
+          <h3 class="pc-title">Value</h3>
+          <p class="pc-body">Shift focus from outputs (deliverables) to outcomes — the intended results and benefits those deliverables enable.</p>
+        </div>
+        <div class="principle-card" data-num="05" style="--clr:#4A7A5C">
+          <span class="pc-num">05</span>
+          <h3 class="pc-title">Systems Thinking</h3>
+          <p class="pc-body">View the project holistically — a single change in one domain creates ripple effects across the entire system.</p>
+        </div>
+        <div class="principle-card" data-num="06" style="--clr:#6A8A4C">
+          <span class="pc-num">06</span>
+          <h3 class="pc-title">Leadership</h3>
+          <p class="pc-body">Adapt your style from directive (chaos) to empowering (competent teams). Model honesty, integrity, and transparency.</p>
+        </div>
+        <div class="principle-card" data-num="07" style="--clr:#8A7A3C">
+          <span class="pc-num">07</span>
+          <h3 class="pc-title">Tailoring</h3>
+          <p class="pc-body">Use "just enough" process matched to the project context — eliminate steps that add little value.</p>
+        </div>
+        <div class="principle-card" data-num="08" style="--clr:#8A5A3C">
+          <span class="pc-num">08</span>
+          <h3 class="pc-title">Quality</h3>
+          <p class="pc-body">Focus on defect prevention rather than detection. Measure across performance, reliability, resilience, and sustainability.</p>
+        </div>
+        <div class="principle-card" data-num="09" style="--clr:#7A3A4C">
+          <span class="pc-num">09</span>
+          <h3 class="pc-title">Complexity</h3>
+          <p class="pc-body">Navigate human behaviour, system interdependencies, ambiguity, and uncertainty through experimentation.</p>
+        </div>
+        <div class="principle-card" data-num="10" style="--clr:#6A2A6C">
+          <span class="pc-num">10</span>
+          <h3 class="pc-title">Risk</h3>
+          <p class="pc-body">Continuously evaluate threats and opportunities. Navigate based on organisational risk appetite and thresholds.</p>
+        </div>
+        <div class="principle-card" data-num="11" style="--clr:#3A4A8C">
+          <span class="pc-num">11</span>
+          <h3 class="pc-title">Adaptability</h3>
+          <p class="pc-body">Use short feedback loops, prototypes, and deferred decisions to absorb change and recover from setbacks.</p>
+        </div>
+        <div class="principle-card" data-num="12" style="--clr:#2A6A8C">
+          <span class="pc-num">12</span>
+          <h3 class="pc-title">Change</h3>
+          <p class="pc-body">Prepare people for new behaviours with a structured transition — communicate vision early, reinforce post-implementation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 03 — FRAMEWORKS ──────────────────────────────── -->
+  <section id="s03-frameworks" class="content-section reveal-section">
+    <div class="container">
+      <p class="chapter-label reveal-item">03 / Frameworks</p>
+      <h2 class="section-heading reveal-item">Core Methodologies</h2>
+      <div class="framework-list" role="list">
+        <div class="framework-row reveal-item" role="listitem">
+          <span class="fw-name">PMBOK® 7th Ed.</span>
+          <span class="fw-desc">Principle-based framework. 12 guiding principles, 8 Project Performance Domains.</span>
+          <span class="fw-tag">Principle-Based</span>
+        </div>
+        <hr class="fw-rule" />
+        <div class="framework-row reveal-item" role="listitem">
+          <span class="fw-name">PRINCE2</span>
+          <span class="fw-desc">Process-based. Continued business justification, defined roles, stage management.</span>
+          <span class="fw-tag">Stage-Gate</span>
+        </div>
+        <hr class="fw-rule" />
+        <div class="framework-row reveal-item" role="listitem">
+          <span class="fw-name">Waterfall</span>
+          <span class="fw-desc">Linear sequential. Each phase completes before the next begins.</span>
+          <span class="fw-tag">Predictive</span>
+        </div>
+        <hr class="fw-rule" />
+        <div class="framework-row reveal-item" role="listitem">
+          <span class="fw-name">Agile</span>
+          <span class="fw-desc">Iterative sprints (2–4 weeks). Scrum, Kanban, XP.</span>
+          <span class="fw-tag">Adaptive</span>
+        </div>
+        <hr class="fw-rule" />
+        <div class="framework-row reveal-item" role="listitem">
+          <span class="fw-name">Hybrid</span>
+          <span class="fw-desc">Over 31.5% of projects now blend Waterfall and Agile approaches.</span>
+          <span class="fw-tag fw-tag--accent">Most Common</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ── SECTION 04 — LIFECYCLE ────────────────────────────────── -->
+  <section id="s04-lifecycle" class="content-section reveal-section">
+    <div class="container">
+      <p class="chapter-label reveal-item">04 / Execution</p>
+      <h2 class="section-heading reveal-item">The Project Lifecycle</h2>
+      <!-- Horizontal flow timeline -->
+      <div class="lifecycle-flow reveal-item" role="list">
+        <div class="lf-step" role="listitem">
+          <div class="lf-circle">01</div>
+          <div class="lf-connector"></div>
+          <h3 class="lf-title">Initiation</h3>
+          <p class="lf-body">Business Case · Charter · Feasibility</p>
+        </div>
+        <div class="lf-step" role="listitem">
+          <div class="lf-circle">02</div>
+          <div class="lf-connector"></div>
+          <h3 class="lf-title">Planning</h3>
+          <p class="lf-body">WBS · Gantt · Risk Register</p>
+        </div>
+        <div class="lf-step" role="listitem">
+          <div class="lf-circle">03</div>
+          <div class="lf-connector"></div>
+          <h3 class="lf-title">Execution</h3>
+          <p class="lf-body">Team · Tasks · Quality · Comms</p>
+        </div>
+        <div class="lf-step" role="listitem">
+          <div class="lf-circle">04</div>
+          <div class="lf-connector"></div>
+          <h3 class="lf-title">Monitoring</h3>
+          <p class="lf-body">KPIs · Scope Creep · Stage Gates</p>
+        </div>
+        <div class="lf-step lf-step--last" role="listitem">
+          <div class="lf-circle">05</div>
+          <h3 class="lf-title">Closure</h3>
+          <p class="lf-body">Acceptance · Archive · Lessons</p>
+        </div>
+      </div>
+
+      <!-- Product lifecycle bar -->
+      <div class="product-lifecycle reveal-item">
+        <h3 class="plc-heading">Product Lifecycle → Project Integration</h3>
+        <div class="plc-bar">
+          <div class="plc-phase" style="--clr:#2A7A8C;--w:20%">
+            <span class="plc-label" style="color:#2A7A8C">Introduction</span>
+            <p class="plc-note">Project 1 — Initial creation</p>
+          </div>
+          <div class="plc-phase" style="--clr:#3A9DB3;--w:22%">
+            <span class="plc-label" style="color:#3A9DB3">Growth</span>
+            <p class="plc-note">Project 2 — New features, scale</p>
+          </div>
+          <div class="plc-phase" style="--clr:#6AB0A0;--w:35%">
+            <span class="plc-label" style="color:#6AB0A0">Maturity</span>
+            <p class="plc-note">Projects 3-6 — Revisions, enhancements</p>
+          </div>
+          <div class="plc-phase" style="--clr:#999;--w:23%">
+            <span class="plc-label" style="color:#777">Decline</span>
+            <p class="plc-note">Project 7 — Retirement / transition</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PAGE NAVIGATION CTAs ─────────────────────────────────── -->
+  <section id="page-nav" class="content-section page-nav-section">
+    <div class="container">
+      <p class="chapter-label">Continue Exploring</p>
+      <h2 class="section-heading">There's more to discover</h2>
+      <p class="pnav-sub">The guide continues across two focused chapters. Choose your path.</p>
+      <div class="pnav-cards">
+
+        <a href="frameworks.html" class="pnav-card pnav-card--mint">
+          <div class="pnav-card-inner">
+            <span class="pnav-tag">Chapters 05 – 11</span>
+            <h3 class="pnav-title">Frameworks &amp; Governance</h3>
+            <p class="pnav-desc">Risk matrices, leadership models, stakeholder maps, PESTLE, ethics, sustainability, and the AI future of project management.</p>
+            <div class="pnav-arrow">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </a>
+
+        <a href="resources.html" class="pnav-card pnav-card--coral">
+          <div class="pnav-card-inner">
+            <span class="pnav-tag">Toolkit</span>
+            <h3 class="pnav-title">Resources &amp; Templates</h3>
+            <p class="pnav-desc">A curated collection of PM templates — Gantt charts, project charters, stakeholder maps, and more industry-standard tools.</p>
+            <div class="pnav-arrow">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────── -->
+  <footer id="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-site">Your PM — The Complete Field Guide</span>
+      <span class="footer-ref">Based on PMBOK 7, PRINCE2, PMI Code of Ethics &amp; Fisher &amp; Lovell</span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

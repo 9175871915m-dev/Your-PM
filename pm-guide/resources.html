@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your PM — Resources &amp; Templates</title>
+  <meta name="description" content="A curated toolkit of PM resources — Gantt charts, project charters, stakeholder maps, and more." />
+  <meta name="theme-color" content="#FAFAF8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Resources page extras ───────────────────────────────── */
+    .res-hero {
+      padding: 100px 0 80px;
+      border-bottom: 1px solid var(--rule);
+      background: linear-gradient(160deg,
+        rgba(142,216,204,0.10) 0%,
+        rgba(255,255,255,0)    50%,
+        rgba(123,174,212,0.08) 100%);
+    }
+
+    .res-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .res-card {
+      display: flex;
+      flex-direction: column;
+      padding: 32px 28px 28px;
+      border-radius: 14px;
+      border: 1.5px solid transparent;
+      text-decoration: none;
+      color: inherit;
+      background: #fff;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.05);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Pastel top stripe per card */
+    .res-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--pastel-gradient);
+    }
+
+    .res-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.10);
+    }
+
+    .res-card:nth-child(3n+1) { border-color: rgba(142,216,204,0.40); }
+    .res-card:nth-child(3n+2) { border-color: rgba(123,174,212,0.40); }
+    .res-card:nth-child(3n)   { border-color: rgba(232,160,144,0.40); }
+
+    .res-source {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      background: rgba(42,122,140,0.08);
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+
+    .res-title {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .res-desc {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--text-muted);
+      flex: 1;
+      margin-bottom: 24px;
+    }
+
+    .res-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 500;
+      transition: gap 0.18s ease;
+    }
+
+    .res-card:hover .res-cta { gap: 14px; }
+
+    .res-section-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin: 72px 0 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .res-section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    .chatbot-cta-block {
+      margin-top: 80px;
+      padding: 56px 48px;
+      border-radius: 20px;
+      background: linear-gradient(135deg,
+        rgba(42,122,140,0.10) 0%,
+        rgba(58,157,179,0.08) 100%);
+      border: 1.5px solid rgba(42,122,140,0.20);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .chatbot-cta-text h2 {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 500;
+      font-style: italic;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .chatbot-cta-text p {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 460px;
+      line-height: 1.6;
+    }
+
+    .chatbot-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 100px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      box-shadow: 0 6px 24px rgba(42,122,140,0.30);
+      flex-shrink: 0;
+    }
+
+    .chatbot-cta-btn:hover {
+      background: var(--accent-light);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(42,122,140,0.40);
+    }
+
+    @media (max-width: 680px) {
+      .chatbot-cta-block { flex-direction: column; padding: 36px 28px; }
+      .res-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fixed top-right nav -->
+  <nav id="site-nav" aria-label="Site navigation">
+    <a id="chat-cta" href="http://localhost:3000" target="_blank" rel="noopener">
+      <span id="chat-cta-dot"></span>
+      Chat with Your PM
+      <svg id="chat-cta-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="res-hero">
+    <div class="container">
+      <a href="index.html" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M11.5 7h-9M5.5 3.5L2 7l3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back to Guide
+      </a>
+      <div style="margin-top: 40px;">
+        <p class="chapter-label">Toolkit</p>
+        <h1 class="section-heading">Resources &amp; <em>Templates</em></h1>
+        <p class="section-body" style="font-size:18px; color:var(--text-muted); max-width:560px; line-height:1.7;">
+          A curated collection of industry-standard PM tools. Everything you need to plan, execute, and close projects professionally.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+
+      <!-- Planning Tools -->
+      <p class="res-section-label">Planning &amp; Scheduling</p>
+      <div class="res-grid">
+
+        <a href="https://excel.cloud.microsoft/en-gb/search/gantt%20chart/?wdOrigin=SEO-INTENT.SEARCHENGINE-LANDING-INTENT2003.SEARCHTEMPLATES"
+           target="_blank" rel="noopener noreferrer" class="res-card">
+          <span class="res-source">Microsoft Excel</span>
+          <h2 class="res-title">Gantt Chart Templates</h2>
+          <p class="res-desc">Official, customisable Gantt chart templates directly in Excel. Ideal for scheduling tasks, tracking milestones, and managing timelines visually.</p>
+          <span class="res-cta">Open Templates <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </a>
+
+        <a href="https://www.smartsheet.com/blog/project-charter-templates-and-guidelines-every-business-need"
+           target="_blank" rel="noopener noreferrer" class="res-card">
+          <span class="res-source">Smartsheet</span>
+          <h2 class="res-title">Project Charter Templates</h2>
+          <p class="res-desc">Guidelines and ready-to-use templates for creating a comprehensive project charter — scope, objectives, stakeholders, and success criteria.</p>
+          <span class="res-cta">Open Templates <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </a>
+
+      </div>
+
+      <!-- Stakeholder Tools -->
+      <p class="res-section-label">Stakeholder Management</p>
+      <div class="res-grid">
+
+        <a href="https://www.stakeholdermap.com/project-templates/"
+           target="_blank" rel="noopener noreferrer" class="res-card">
+          <span class="res-source">StakeholderMap.com</span>
+          <h2 class="res-title">Stakeholder Map Templates</h2>
+          <p class="res-desc">A library of templates for mapping, analysing, and engaging stakeholders — including power/interest grids, RACI charts, and engagement plans.</p>
+          <span class="res-cta">Open Templates <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </a>
+
+        <a href="https://www.projectmanagement.com/templates/"
+           target="_blank" rel="noopener noreferrer" class="res-card">
+          <span class="res-source">PMI — ProjectManagement.com</span>
+          <h2 class="res-title">PM Template Library</h2>
+          <p class="res-desc">The official PMI template library — risk registers, communication plans, WBS templates, and status report formats aligned with PMBOK standards.</p>
+          <span class="res-cta">Open Library <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </a>
+
+      </div>
+
+      <!-- Learning & Reference -->
+      <p class="res-section-label">Learning &amp; Reference</p>
+      <div class="res-grid">
+
+        <a href="https://www.pmi.org/pmbok-guide-standards/foundational/pmbok"
+           target="_blank" rel="noopener noreferrer" class="res-card">
+          <span class="res-source">PMI</span>
+          <h2 class="res-title">PMBOK® Guide — 7th Edition</h2>
+          <p class="res-desc">The foundational reference for project management professionals. Covers the 12 principles, 8 performance domains, and tailoring guidance for any project context.</p>
+          <span class="res-cta">Learn More <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </a>
+
+        <a href="https://www.prince2.com/uk/prince2-methodology"
+           target="_blank" rel="noopener noreferrer" class="res-card">
+          <span class="res-source">Axelos</span>
+          <h2 class="res-title">PRINCE2 Methodology</h2>
+          <p class="res-desc">The official PRINCE2 resource hub — process maps, role definitions, stage-gate guides, and certification pathways for structured project management.</p>
+          <span class="res-cta">Explore PRINCE2 <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </a>
+
+        <a href="https://agilemanifesto.org/"
+           target="_blank" rel="noopener noreferrer" class="res-card">
+          <span class="res-source">Agile Alliance</span>
+          <h2 class="res-title">The Agile Manifesto</h2>
+          <p class="res-desc">The original 12 Agile principles and 4 values that sparked the adaptive PM revolution. Essential reading for any PM working in iterative or hybrid environments.</p>
+          <span class="res-cta">Read Manifesto <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+        </a>
+
+      </div>
+
+      <!-- AI Chatbot CTA -->
+      <div class="chatbot-cta-block">
+        <div class="chatbot-cta-text">
+          <h2>Need a PM answer <em>right now?</em></h2>
+          <p>Your AI-powered PM advisor has answers to framework questions, risk strategies, stakeholder challenges, and more — available 24/7.</p>
+        </div>
+        <a href="http://localhost:3000" target="_blank" rel="noopener" class="chatbot-cta-btn">
+          <span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#6DFFB0;box-shadow:0 0 6px rgba(109,255,176,0.7);"></span>
+          Ask Your PM
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────── -->
+  <footer id="site-footer" style="margin-top: 80px;">
+    <div class="container footer-inner">
+      <span class="footer-site">Your PM — The Complete Field Guide</span>
+      <nav class="footer-page-nav" aria-label="Page navigation" style="display:flex;gap:24px;">
+        <a href="index.html" style="font-size:13px;color:var(--text-faint);text-decoration:none;">← Foundations</a>
+        <a href="frameworks.html" style="font-size:13px;color:var(--text-faint);text-decoration:none;">Frameworks →</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>

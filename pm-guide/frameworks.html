@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your PM — Frameworks &amp; Governance</title>
+  <meta name="description" content="Deep-dive into PM frameworks, risk, leadership, stakeholders, PESTLE, ethics, sustainability, and the AI future." />
+  <meta name="theme-color" content="#FAFAF8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Fixed top-right nav -->
+  <nav id="site-nav" aria-label="Site navigation">
+    <a id="chat-cta" href="http://localhost:3000" target="_blank" rel="noopener">
+      <span id="chat-cta-dot"></span>
+      Chat with Your PM
+      <svg id="chat-cta-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </nav>
+
+  <!-- ── PAGE HEADER ─────────────────────────────────────────── -->
+  <header class="subpage-header">
+    <div class="container">
+      <a href="index.html" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M11.5 7h-9M5.5 3.5L2 7l3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back to Guide
+      </a>
+      <div class="subpage-title-row">
+        <p class="chapter-label">Chapters 05 – 11</p>
+        <h1 class="subpage-title">Frameworks &amp; <em>Governance</em></h1>
+        <p class="subpage-desc">Risk, leadership, stakeholders, PESTLE, ethics, sustainability, and the AI future.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── SECTION 05 — RISK ─────────────────────────────────────── -->
+  <section id="s05-risk" class="content-section content-section--dark reveal-section">
+    <div class="container">
+      <p class="chapter-label reveal-item">05 / Risk</p>
+      <h2 class="section-heading reveal-item">Risk = Probability × Consequence</h2>
+      <div class="risk-layout">
+        <div class="risk-matrix-wrap reveal-item" aria-label="5 by 5 Risk Matrix, low to critical">
+          <div class="risk-matrix-labels-y" aria-hidden="true">
+            <span>Critical</span><span>High</span><span>Medium</span><span>Low</span><span>Negligible</span>
+          </div>
+          <div class="risk-matrix" role="grid" aria-label="Risk matrix grid">
+            <div class="rm-cell rm-amber rm-act" role="gridcell" title="Critical×Rare: Amber"></div>
+            <div class="rm-cell rm-red rm-act"   role="gridcell" title="Critical×Unlikely: Red"></div>
+            <div class="rm-cell rm-red rm-act"   role="gridcell"></div>
+            <div class="rm-cell rm-red rm-act"   role="gridcell"></div>
+            <div class="rm-cell rm-red rm-act"   role="gridcell"></div>
+            <div class="rm-cell rm-green rm-act" role="gridcell"></div>
+            <div class="rm-cell rm-amber rm-act" role="gridcell"></div>
+            <div class="rm-cell rm-red rm-act"   role="gridcell"></div>
+            <div class="rm-cell rm-red rm-act"   role="gridcell"></div>
+            <div class="rm-cell rm-red rm-act"   role="gridcell"></div>
+            <div class="rm-cell rm-green rm-act" role="gridcell"></div>
+            <div class="rm-cell rm-amber rm-act" role="gridcell"></div>
+            <div class="rm-cell rm-amber rm-act" role="gridcell"></div>
+            <div class="rm-cell rm-red rm-act"   role="gridcell"></div>
+            <div class="rm-cell rm-red rm-act"   role="gridcell"></div>
+            <div class="rm-cell rm-green rm-act" role="gridcell"></div>
+            <div class="rm-cell rm-green rm-act" role="gridcell"></div>
+            <div class="rm-cell rm-amber rm-act" role="gridcell"></div>
+            <div class="rm-cell rm-amber rm-act" role="gridcell"></div>
+            <div class="rm-cell rm-red rm-act"   role="gridcell"></div>
+            <div class="rm-cell rm-green rm-act" role="gridcell"></div>
+            <div class="rm-cell rm-green rm-act" role="gridcell"></div>
+            <div class="rm-cell rm-green rm-act" role="gridcell"></div>
+            <div class="rm-cell rm-amber rm-act" role="gridcell"></div>
+            <div class="rm-cell rm-amber rm-act" role="gridcell"></div>
+          </div>
+          <div class="risk-matrix-labels-x" aria-hidden="true">
+            <span>Rare</span><span>Unlikely</span><span>Possible</span><span>Likely</span><span>Almost Certain</span>
+          </div>
+          <div class="risk-axis-label-x" aria-hidden="true">Probability →</div>
+          <div class="risk-axis-label-y" aria-hidden="true">Consequence ↑</div>
+        </div>
+        <div class="risk-right reveal-item">
+          <div class="risk-strategies">
+            <h3 class="risk-strategies-title">Response Strategies</h3>
+            <div class="risk-strategy"><span class="rs-name rs-avoid">Avoid</span><p class="rs-desc">Eliminate the threat by changing the plan</p></div>
+            <div class="risk-strategy"><span class="rs-name rs-transfer">Transfer</span><p class="rs-desc">Shift financial impact via insurance or contract</p></div>
+            <div class="risk-strategy"><span class="rs-name rs-mitigate">Mitigate</span><p class="rs-desc">Reduce probability or impact through early action</p></div>
+            <div class="risk-strategy"><span class="rs-name rs-accept">Accept</span><p class="rs-desc">Acknowledge and hold a contingency reserve</p></div>
+          </div>
+          <div class="risk-checklist">
+            <h3 class="risk-strategies-title">Optimised Response Checklist</h3>
+            <ul class="rcl-list">
+              <li class="rcl-item"><span class="rcl-check">✓</span> <strong>Appropriate</strong> — scaled to significance</li>
+              <li class="rcl-item"><span class="rcl-check">✓</span> <strong>Cost-effective</strong> — value exceeds cost</li>
+              <li class="rcl-item"><span class="rcl-check">✓</span> <strong>Realistic</strong> — achievable in context</li>
+              <li class="rcl-item"><span class="rcl-check">✓</span> <strong>Agreed</strong> — stakeholder-approved</li>
+              <li class="rcl-item"><span class="rcl-check">✓</span> <strong>Owned</strong> — formally assigned</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 06 — LEADERSHIP ───────────────────────────────── -->
+  <section id="s06-leadership" class="content-section reveal-section">
+    <div class="container">
+      <p class="chapter-label reveal-item">06 / Leadership</p>
+      <h2 class="section-heading reveal-item">Teachable Model of Leadership</h2>
+      <p class="section-intro reveal-item">Leadership is defined as <em>"taking responsibility for getting results through the efforts of others."</em> Four core strategies span the spectrum from control to empowerment.</p>
+      <div class="tml-grid reveal-item">
+        <div class="tml-card tml-directive">
+          <div class="tml-icon">⚡</div>
+          <h3 class="tml-title">Directive</h3>
+          <p class="tml-theory">Theory X</p>
+          <p class="tml-body">Assign goals, provide detailed instructions, contingent reprimands. Used in chaos or crisis.</p>
+          <div class="tml-bar" style="--fill: 25%"></div>
+          <span class="tml-spectrum">Control</span>
+        </div>
+        <div class="tml-card tml-transactional">
+          <div class="tml-icon">💰</div>
+          <h3 class="tml-title">Transactional</h3>
+          <p class="tml-theory">Operant Conditioning</p>
+          <p class="tml-body">Contingent rewards — financial bonuses and recognition tied to performance outcomes.</p>
+          <div class="tml-bar" style="--fill: 50%"></div>
+          <span class="tml-spectrum">Incentive</span>
+        </div>
+        <div class="tml-card tml-transformational">
+          <div class="tml-icon">🔥</div>
+          <h3 class="tml-title">Transformational</h3>
+          <p class="tml-theory">Maslow + Charisma</p>
+          <p class="tml-body">Articulate a vision, display moral conviction, communicate confidence, challenge the status quo.</p>
+          <div class="tml-bar" style="--fill: 75%"></div>
+          <span class="tml-spectrum">Inspiring</span>
+        </div>
+        <div class="tml-card tml-empowering">
+          <div class="tml-icon">🌱</div>
+          <h3 class="tml-title">Empowering</h3>
+          <p class="tml-theory">Theory Y + Servant Leadership</p>
+          <p class="tml-body">Encourage self-leadership, participative goal-setting, mentoring and coaching.</p>
+          <div class="tml-bar" style="--fill: 100%"></div>
+          <span class="tml-spectrum">Autonomy</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 07 — STAKEHOLDERS ─────────────────────────────── -->
+  <section id="s07-stakeholders" class="content-section reveal-section">
+    <div class="container">
+      <p class="chapter-label reveal-item">07 / Stakeholders</p>
+      <h2 class="section-heading reveal-item">Engagement Drives Outcomes</h2>
+      <p class="section-intro reveal-item">Proactive engagement is a critical driver of success — linking people directly to results.</p>
+      <div class="stakeholder-layout reveal-item">
+        <div class="power-matrix" aria-label="Power Interest Matrix">
+          <div class="pm-axis-y" aria-hidden="true">Power ↑</div>
+          <div class="pm-axis-x" aria-hidden="true">Interest →</div>
+          <div class="pm-quadrant pm-q1"><span class="pm-q-label">Keep Satisfied</span><div class="pm-dot" style="top:30%;left:35%"></div></div>
+          <div class="pm-quadrant pm-q2"><span class="pm-q-label">Manage Closely</span><div class="pm-dot pm-dot--key" style="top:40%;left:55%"></div><div class="pm-dot pm-dot--key" style="top:65%;left:70%"></div></div>
+          <div class="pm-quadrant pm-q3"><span class="pm-q-label">Monitor</span><div class="pm-dot pm-dot--minor" style="top:50%;left:40%"></div></div>
+          <div class="pm-quadrant pm-q4"><span class="pm-q-label">Keep Informed</span><div class="pm-dot" style="top:35%;left:45%"></div><div class="pm-dot" style="top:60%;left:65%"></div></div>
+        </div>
+        <div class="engagement-outcomes">
+          <div class="eo-row"><span class="eo-action">Identify &amp; Analyse</span><span class="eo-arrow">→</span><span class="eo-result">Accurate scope &amp; requirements</span></div>
+          <div class="eo-row"><span class="eo-action">Two-Way Communication</span><span class="eo-arrow">→</span><span class="eo-result">Early risk detection</span></div>
+          <div class="eo-row"><span class="eo-action">Define Risk Thresholds</span><span class="eo-arrow">→</span><span class="eo-result">Aligned risk appetite</span></div>
+          <div class="eo-row"><span class="eo-action">Co-Define Success</span><span class="eo-arrow">→</span><span class="eo-result">Clearer benefits realisation</span></div>
+          <div class="governance-trio">
+            <div class="gov-item"><span class="gov-term">Authority</span><p>Formal right to decide</p></div>
+            <div class="gov-item"><span class="gov-term">Accountability</span><p>Answerable for outcome — not shared</p></div>
+            <div class="gov-item"><span class="gov-term">Responsibility</span><p>Obligation to fulfil — can be shared</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 08 — PESTLE ───────────────────────────────────── -->
+  <section id="s08-pestle" class="content-section content-section--dark reveal-section">
+    <div class="container">
+      <p class="chapter-label reveal-item">08 / Environment</p>
+      <h2 class="section-heading reveal-item">PESTLE: External Factors</h2>
+      <p class="section-intro reveal-item">The value delivery system is influenced by external forces that can have favourable, unfavourable, or neutral impacts on project performance.</p>
+      <div class="pestle-hex reveal-item">
+        <div class="pestle-card" data-letter="P" style="--hue: #2A7A8C"><span class="pestle-letter">P</span><h3 class="pestle-name">Political</h3><p class="pestle-detail">Political climate, regional customs, governance structures, and trade policy.</p></div>
+        <div class="pestle-card" data-letter="E" style="--hue: #3A9DB3"><span class="pestle-letter">E</span><h3 class="pestle-name">Economic</h3><p class="pestle-detail">Currency rates, interest, inflation, taxes, and tariffs affecting cost and investment.</p></div>
+        <div class="pestle-card" data-letter="S" style="--hue: #6AB0A0"><span class="pestle-letter">S</span><h3 class="pestle-name">Social</h3><p class="pestle-detail">Demographics, public perception, ethics, and regional codes of conduct.</p></div>
+        <div class="pestle-card" data-letter="T" style="--hue: #8A7A3C"><span class="pestle-letter">T</span><h3 class="pestle-name">Technological</h3><p class="pestle-detail">Market conditions, innovation trends, IP, and disruptive technology.</p></div>
+        <div class="pestle-card" data-letter="L" style="--hue: #7A3A4C"><span class="pestle-letter">L</span><h3 class="pestle-name">Legal</h3><p class="pestle-detail">National laws on security, data protection, employment, and procurement.</p></div>
+        <div class="pestle-card" data-letter="E" style="--hue: #4A8A5C"><span class="pestle-letter">E</span><h3 class="pestle-name">Environmental</h3><p class="pestle-detail">Physical working conditions, weather, ecological standards, and sustainability.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 09 — GOVERNANCE & ETHICS ─────────────────────── -->
+  <section id="s09-ethics" class="content-section reveal-section">
+    <div class="container">
+      <p class="chapter-label reveal-item">09 / Governance</p>
+      <h2 class="section-heading reveal-item">Ethical Decision-Making Frameworks</h2>
+      <p class="section-intro reveal-item">The Schema of Ethical Theories (Fisher and Lovell) categorises the rationalisations used in individual and institutional decision-making.</p>
+      <div class="ethics-table reveal-item">
+        <div class="et-header"><span>Framework</span><span>Focus</span><span>Rule</span><span>Beneficiary</span></div>
+        <div class="et-row" style="--accent-clr:#2A7A8C"><div class="et-cell et-name"><strong>Virtue Ethics</strong><em>Aristotle</em></div><div class="et-cell">Individual</div><div class="et-cell">Principle</div><div class="et-cell et-beneficiary">Stakeholder</div></div>
+        <div class="et-row" style="--accent-clr:#3A6B8C"><div class="et-cell et-name"><strong>Deontological</strong><em>Immanuel Kant</em></div><div class="et-cell">Institutional</div><div class="et-cell">Principle</div><div class="et-cell et-beneficiary">Stakeholder</div></div>
+        <div class="et-row" style="--accent-clr:#8A7A3C"><div class="et-cell et-name"><strong>Utilitarianism</strong><em>Jeremy Bentham</em></div><div class="et-cell">Institutional</div><div class="et-cell">Policy</div><div class="et-cell et-beneficiary">Shareholder</div></div>
+        <div class="et-row" style="--accent-clr:#7A3A4C"><div class="et-cell et-name"><strong>Egoism</strong><em>Robert Nozick</em></div><div class="et-cell">Individual</div><div class="et-cell">Policy</div><div class="et-cell et-beneficiary">Shareholder</div></div>
+      </div>
+      <div class="ethics-grid reveal-item" role="list">
+        <div class="ethics-col" role="listitem"><span class="ethics-num">01</span><h3 class="ethics-value">Responsibility</h3><p class="ethics-desc">Own decisions and their consequences. Acknowledge errors openly.</p></div>
+        <div class="ethics-col" role="listitem"><span class="ethics-num">02</span><h3 class="ethics-value">Respect</h3><p class="ethics-desc">Treat all stakeholders with dignity. Negotiate in good faith.</p></div>
+        <div class="ethics-col" role="listitem"><span class="ethics-num">03</span><h3 class="ethics-value">Fairness</h3><p class="ethics-desc">Make impartial, conflict-free decisions. Declare conflicts of interest.</p></div>
+        <div class="ethics-col" role="listitem"><span class="ethics-num">04</span><h3 class="ethics-value">Honesty</h3><p class="ethics-desc">Communicate truthfully and transparently. No deceptive practices.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 10 — SUSTAINABILITY ──────────────────────────── -->
+  <section id="s10-sustainability" class="content-section content-section--dark reveal-section">
+    <div class="container">
+      <p class="chapter-label reveal-item">10 / Sustainability</p>
+      <h2 class="section-heading reveal-item">The Triple Bottom Line</h2>
+      <div class="tbl-grid reveal-item" role="list">
+        <div class="tbl-col" role="listitem"><div class="tbl-icon" style="--tbl-c:#2A7A8C">🌍</div><h3 class="tbl-pillar">Planet</h3><p class="tbl-desc">Green PM embeds environmental impact into project design from day one. Carbon footprint, material sourcing, and ecological risk are treated as first-class constraints alongside scope, time, and cost.</p></div>
+        <div class="tbl-col" role="listitem"><div class="tbl-icon" style="--tbl-c:#4A8A5C">👥</div><h3 class="tbl-pillar">People</h3><p class="tbl-desc">Social impact — equitable labour, community consultation, and stakeholder wellbeing — is planned and measured. People are the project's most critical resource and most affected output.</p></div>
+        <div class="tbl-col" role="listitem"><div class="tbl-icon" style="--tbl-c:#8A7A3C">📈</div><h3 class="tbl-pillar">Profit</h3><p class="tbl-desc">Long-term financial viability is evaluated alongside short-term returns. Sustainable value accounts for reputational risk, regulatory exposure, and full lifecycle cost.</p></div>
+      </div>
+      <div class="strategy-moves reveal-item">
+        <h3 class="sm-heading">Strategic Timing of Moves</h3>
+        <div class="sm-row">
+          <div class="sm-card sm-first"><span class="sm-badge">First Mover</span><p>Enter first — build brand and competitive edge. Highest risk and cost.</p></div>
+          <div class="sm-card sm-fast"><span class="sm-badge">Fast Follower</span><p>Rapidly adopt proven innovations. Lower risk, capture established market.</p></div>
+          <div class="sm-card sm-late"><span class="sm-badge">Late Mover</span><p>Enter established market. Focus on niche or benefit from stable technology.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 11 — AI & FUTURE ──────────────────────────────── -->
+  <section id="s11-future" class="content-section reveal-section">
+    <div class="container">
+      <p class="chapter-label reveal-item">11 / AI &amp; Future</p>
+      <div class="future-pct reveal-item" id="pct-counter" aria-label="80 percent">0%</div>
+      <p class="future-subline reveal-item">The share of project management tasks AI will handle by 2030</p>
+      <div class="future-split reveal-item">
+        <div class="future-col">
+          <h3 class="future-col-title">AI will automate</h3>
+          <ul class="future-list">
+            <li>Scheduling &amp; resource allocation</li>
+            <li>Status reporting &amp; forecasting</li>
+            <li>Risk flagging &amp; anomaly detection</li>
+            <li>Document generation &amp; summarisation</li>
+          </ul>
+        </div>
+        <div class="future-divider" aria-hidden="true"></div>
+        <div class="future-col">
+          <h3 class="future-col-title">Humans will lead</h3>
+          <ul class="future-list">
+            <li>Empathy &amp; emotional intelligence</li>
+            <li>Ethical judgment &amp; governance</li>
+            <li>Stakeholder trust &amp; negotiation</li>
+            <li>Strategic creativity &amp; vision</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ai-bar-section reveal-item">
+        <div class="ai-bar-row">
+          <span class="ai-bar-label">Automated (AI)</span>
+          <div class="ai-bar-track"><div class="ai-bar-fill" data-target="80" style="--target:80%"></div></div>
+          <span class="ai-bar-pct">80%</span>
+        </div>
+        <div class="ai-bar-row">
+          <span class="ai-bar-label">Human-led</span>
+          <div class="ai-bar-track"><div class="ai-bar-fill" data-target="20" style="--target:20%;--clr:#4A8A5C"></div></div>
+          <span class="ai-bar-pct">20%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BACK / RESOURCES NAV ───────────────────────────────────── -->
+  <section class="content-section page-nav-section">
+    <div class="container">
+      <p class="chapter-label">Navigate</p>
+      <div class="pnav-cards">
+        <a href="index.html" class="pnav-card pnav-card--blue">
+          <div class="pnav-card-inner">
+            <span class="pnav-tag">← Back</span>
+            <h3 class="pnav-title">Foundations &amp; Lifecycle</h3>
+            <p class="pnav-desc">Iron Triangle, 12 Principles, Core Methodologies, and the Project Lifecycle.</p>
+            <div class="pnav-arrow"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16 10H4M8 14l-4-4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+        </a>
+        <a href="resources.html" class="pnav-card pnav-card--coral">
+          <div class="pnav-card-inner">
+            <span class="pnav-tag">Toolkit →</span>
+            <h3 class="pnav-title">Resources &amp; Templates</h3>
+            <p class="pnav-desc">Gantt charts, project charters, stakeholder maps, and industry-standard PM tools.</p>
+            <div class="pnav-arrow"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────── -->
+  <footer id="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-site">Your PM — The Complete Field Guide</span>
+      <span class="footer-ref">Based on PMBOK 7, PRINCE2, PMI Code of Ethics &amp; Fisher &amp; Lovell</span>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
