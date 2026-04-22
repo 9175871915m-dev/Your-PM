@@ -7,6 +7,14 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.resolve(__dirname),
   },
+  async rewrites() {
+    return [
+      {
+        source: "/",
+        destination: "/index.html",
+      },
+    ];
+  },
 };
 
 export default nextConfig;
