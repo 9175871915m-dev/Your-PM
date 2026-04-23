@@ -144,13 +144,10 @@
     fetch(url)
       .then(function (r) { return r.blob(); })
       .then(function (blob) {
-        // createImageBitmap decodes JPEG asynchronously, off the main thread.
-        // Resizing here means paintFrame never has to scale — it's 1 drawImage call.
-        return createImageBitmap(blob, {
-          resizeWidth:   canvas.width   || window.innerWidth,
-          resizeHeight:  canvas.height  || window.innerHeight,
-          resizeQuality: 'medium'
-        });
+        // Decode at natural resolution — the contain-fit drawImage in paintFrame
+        // handles correct letterboxing on all screen shapes (portrait mobile, etc.).
+        // Passing canvas dimensions was squashing landscape images on portrait mobile.
+        return createImageBitmap(blob);
       })
       .then(function (bmp) {
         bitmaps[idx] = bmp;

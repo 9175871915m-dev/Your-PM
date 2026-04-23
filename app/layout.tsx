@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           pointerEvents: 'auto',
         }}>
           <a
-            href="http://localhost:4321"
+            href="/"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
