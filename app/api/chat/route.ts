@@ -20,9 +20,10 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json(response);
   } catch (error) {
-    console.error('Chat API error:', error);
+    const msg = error instanceof Error ? error.message : String(error);
+    console.error('Chat API error:', msg);
     return NextResponse.json(
-      { error: 'Failed to process your request. Please try again.' },
+      { error: 'Failed to process your request. Please try again.', debug: msg },
       { status: 500 }
     );
   }
