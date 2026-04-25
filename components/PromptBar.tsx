@@ -8,12 +8,12 @@ interface Props {
 }
 
 const QUICK_PROMPTS = [
-  'What is the Iron Triangle?',
-  'Explain the 12 Principles of PMBOK 7',
-  'How does Agile differ from Predictive?',
-  'What is a PESTLE analysis?',
-  'How do I create a risk matrix?',
-  'What is the role of AI in project management?',
+  'How does CDM 2015 apply to construction?',
+  'What is a Variation Order?',
+  'Explain MEP commissioning',
+  'What are the rules under BS 7671?',
+  'How is risk managed in construction?',
+  'Explain the PMBOK Guide',
 ];
 
 export default function PromptBar({ onSend, disabled }: Props) {

@@ -30,6 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         }}>
           <a
             href="/"
+            onClick={(e) => { e.preventDefault(); window.location.href = '/'; }}
             style={{
               display: 'inline-flex',
               alignItems: 'center',

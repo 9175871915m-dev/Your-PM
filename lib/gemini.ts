@@ -16,62 +16,11 @@ export async function generateAnswer(
   chunks: KBChunk[],
   history: { role: string; content: string }[]
 ): Promise<ChatResponse> {
-  const API_KEY = process.env.GEMINI_API_KEY || '';
   const sector = detectSector(query + ' ' + chunks.map(c => c.content).join(' '));
 
-  if (!API_KEY || API_KEY === 'your_gemini_api_key_here') {
-    return generateMockAnswer(query, chunks, sector);
-  }
-
-  const contextBlock = chunks.length
-    ? `KNOWLEDGE BASE EXCERPTS:\n\n${chunks
-        .map((c, i) => `[Source ${i + 1}: ${c.title} (${c.sector})]\n${c.content}`)
-        .join('\n\n---\n\n')}`
-    : '';
-
-  const systemInstruction = `You are "Your PM", an expert AI project management advisor helping small businesses, charities, and professionals — including those in Construction, Mechanical, and Electrical sectors — in Ireland and beyond.
-
-Provide clear, structured, actionable project management advice.
-Reference frameworks (PMBOK, PRINCE2, NEC3, FIDIC, CDM 2015, BS 7671, Agile, Lean) when relevant.
-Use **bold** for key terms. Use bullet points and numbered lists. Keep responses focused and practical.
-When referencing knowledge base sources, mention them explicitly.
-${contextBlock}`;
-
-  const contents = [
-    ...history.slice(-4).map(h => ({
-      role: h.role === 'model' ? 'model' : 'user',
-      parts: [{ text: h.content }],
-    })),
-    { role: 'user', parts: [{ text: query }] },
-  ];
-
-  const url = `${API_BASE}/${MODEL}:generateContent?key=${API_KEY}`;
-
-  try {
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        system_instruction: { parts: [{ text: systemInstruction }] },
-        contents,
-        generationConfig: {
-          temperature: 0.7,
-          maxOutputTokens: 1200,
-        },
-      }),
-    });
-
-    if (!response.ok) {
-      const errText = await response.text();
-      console.error('Gemini API error:', response.status, errText.slice(0, 300));
-      if (response.status === 429) {
-        return generateMockAnswer(query, chunks, sector);
-      }
-      throw new Error(`Gemini API ${response.status}`);
-    }
-
-    const data = await response.json();
-    const answer = data?.candidates?.[0]?.content?.parts?.[0]?.text || 'No response generated.';
+  // Bypass Gemini API entirely and use local knowledge base data
+  return generateMockAnswer(query, chunks, sector);
+}
 
     return {
       answer,
@@ -104,16 +53,19 @@ function generateMockAnswer(
     sector === 'electrical'   ? 'BS 7671 (IEE Wiring Regulations) and IEC standards' :
     'PMBOK 7th Edition or PRINCE2 principles';
 
-  const answer = `**Your PM** has analysed your query across the knowledge base.
+  let answer = `**Based on your local Knowledge Base (${sector} sector):**\n\n`;
 
-${excerpt ? `Based on the **${source!.title}** reference:\n\n> ${excerpt}\n\n` : ''}**Recommended Approach:**
+  if (source && excerpt) {
+    answer += `From **${source.title}**:\n> ${excerpt.trim()}...\n\n`;
+  } else {
+    answer += `I couldn't find a specific excerpt for that in the local database, but here is general guidance:\n\n`;
+  }
 
+  answer += `**Recommended Approach:**\n
 1. **Identify Phase** — Determine where in the project lifecycle this issue sits (Initiation → Planning → Execution → Monitoring → Close-out).
 2. **Apply Framework** — Apply ${frameworkHint}.
-3. **Document & Track** — Raise a formal action item in your risk register or issue log with owner, due date, and status.
-4. **Escalate if needed** — If this impacts programme or budget, trigger your change control process immediately.
-
-> ⚠️ *Demo mode — add your Gemini API key to \`.env.local\` for full AI-powered answers.*`;
+3. **Document & Track** — Raise a formal action item in your risk register or issue log.
+4. **Escalate if needed** — If this impacts programme or budget, trigger your change control process.`;
 
   return {
     answer,
