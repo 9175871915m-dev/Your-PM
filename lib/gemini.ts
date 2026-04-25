@@ -22,22 +22,6 @@ export async function generateAnswer(
   return generateMockAnswer(query, chunks, sector);
 }
 
-    return {
-      answer,
-      sources: chunks.map(c => ({
-        title: c.title,
-        file: c.file,
-        sector: c.sector,
-        excerpt: c.content.slice(0, 180) + '...',
-        score: c.score || 0,
-      })),
-      sector,
-    };
-  } catch (err) {
-    console.error('generateAnswer error:', err);
-    throw err;
-  }
-}
 
 function generateMockAnswer(
   query: string,
